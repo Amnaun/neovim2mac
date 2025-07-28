@@ -31,4 +31,4 @@ function NeovideToggleFullScreen()
   end
 end
 
-vim.api.nvim_set_keymap("n", "<F11>", ":lua NeovideToggleFullScreen()<CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<F10>", ":lua NeovideToggleFullScreen()<CR>", { silent = true, noremap = true })
