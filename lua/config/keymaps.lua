@@ -8,7 +8,7 @@ vim.keymap.set("i", "jk", "<Esc>", { silent = true, noremap = true })
 --设置最上面是shift+l
 vim.keymap.set(
   { "n", "v" }, -- {'n', 'v'} 表示在 Normal 和 Visual 模式下都生效
-  "L", -- 'L' 代表 Shift + l
+  "P", -- 'L' 代表 Shift + l
   "gg", -- 要执行的命令
   { noremap = true, silent = true, desc = "Go to first line" }
 )
