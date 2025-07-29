@@ -21,9 +21,11 @@ vim.o.guifont = "Maple Mono NF CN:h24"
 vim.g.neovide_cursor_vfx_mode = "sonicboom" -- 设置光标VFX主题
 vim.g.neovide_cursor_vfx_opacity = 100 -- 降低粒子不透明度 (0-255)，让它们不那么显眼
 vim.g.neovide_refresh_rate = 60 -- 设置刷新率
+vim.g.neovide_cursor_animation_length = 0.06 --设置动画速度(上下)
+vim.g.neovide_cursor_short_animation_length = 300 --设置短动画速度(左右)
 vim.g.neovide_cursor_vfx_particle_size = 2.0 -- 设置光标粒子大小
-vim.g.neovide_cursor_vfx_particle_lifetime = 3500 -- **关键：将生命周期从 3500ms 降到 500ms (0.5 秒)**
-vim.g.neovide_cursor_vfx_particle_speed = 2.5 -- 粒子扩散速度
+vim.g.neovide_cursor_vfx_particle_lifetime = 1500 -- **关键：将生命周期从 3500ms 降到 500ms (0.5 秒)**
+vim.g.neovide_cursor_vfx_particle_speed = 10 -- 粒子扩散速度
 
 -- Neovide 缩放因子（用于动态调整字体大小）
 vim.g.neovide_scale_factor = 0.7 -- 初始缩放比例
@@ -49,7 +51,8 @@ vim.g.neovide_opacity = 0.75 -- 0.0 完全透明, 1.0 完全不透明
 -- 启用背景模糊（毛玻璃效果），并设置模糊半径
 --vim.g.neovide_transparency_blur_radius = 1.0 -- 模糊半径，值越大模糊越强，可以尝试 0.5 到 2.0
 vim.g.neovide_window_blurred = false -- 启用模糊效果（这个开关应该配合 radius 一起用）
-
+vim.g.neovide_show_border = false --显示边框
+--vim.g.neovide_hide_mouse_when_typing = false --输入时隐藏鼠标
 -- 其他 Neovide 特有配置（如果需要）
 -- vim.g.neovide_floating_blur = false -- 禁用浮动窗口模糊
 -- vim.g.neovide_theme = "auto" -- 自动根据系统主题切换亮/暗模式
