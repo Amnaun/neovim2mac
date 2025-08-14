@@ -26,6 +26,8 @@ vim.g.neovide_cursor_short_animation_length = 300 --设置短动画速度(左右
 vim.g.neovide_cursor_vfx_particle_size = 2.0 -- 设置光标粒子大小
 vim.g.neovide_cursor_vfx_particle_lifetime = 1500 -- **关键：将生命周期从 3500ms 降到 500ms (0.5 秒)**
 vim.g.neovide_cursor_vfx_particle_speed = 10 -- 粒子扩散速度
+vim.g.neovide_bloom_enabled = true --  启用辉光效果
+vim.g.neovide_bloom_intensity = 0.15 -- 辉光强度
 
 -- Neovide 缩放因子（用于动态调整字体大小）
 vim.g.neovide_scale_factor = 0.7 -- 初始缩放比例
