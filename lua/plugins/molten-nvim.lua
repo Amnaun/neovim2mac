@@ -1,9 +1,13 @@
 return {
   "benlubas/molten-nvim",
-  version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
   build = ":UpdateRemotePlugins",
-  init = function()
-    -- this is an example, not a default. Please see the readme for more configuration options
-    vim.g.molten_output_win_max_height = 12
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "neovim/nvim-lspconfig",
+    "3rd/image.nvim", -- 确保 image.nvim 在这里
+  },
+  config = function()
+    -- ... 其他配置
+    vim.g.molten_image_provider = "image.nvim"
   end,
 }
