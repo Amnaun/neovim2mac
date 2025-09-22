@@ -19,6 +19,20 @@ vim.keymap.set("n", "1e", ":CompetiTest edit_testcase<CR>", { silent = true, nor
 vim.keymap.set("n", "1d", ":CompetiTest delete_testcase<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "1r", ":CompetiTest run<CR>", { silent = true, noremap = true })
 
+--设置molten插件
+vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>", { silent = true, desc = "初始化插件" })
+
+vim.keymap.set("n", "<leader>re", ":MoltenEvaluateOperator<CR>", { silent = true, desc = "运行操作符选择" })
+
+vim.keymap.set("n", "<leader>rl", ":MoltenEvaluateLine<CR>", { silent = true, desc = "运行当前行" })
+
+vim.keymap.set(
+  "v",
+  "<leader>rv",
+  ":<C-u>MoltenEvaluateVisual<CR>gv",
+  { silent = true, desc = "运行可视选中区域" }
+)
+
 --设置CodeSnap插件
 vim.api.nvim_set_keymap("v", "<leader>cs", ":CodeSnap<CR>", { noremap = true, silent = true })
 
