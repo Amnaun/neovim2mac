@@ -3,7 +3,7 @@
 return {
   -- Mason 配置：安装命令行工具
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "codelldb", -- 调试器

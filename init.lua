@@ -26,7 +26,6 @@ local conda_path = get_conda_python_path()
 if conda_path then
   -- 如果找到 Conda 路径，则使用它
   vim.g.python3_host_prog = conda_path
-  print("已动态设置为 Conda Python: " .. conda_path)
 else
   -- 否则，让它保持未设置或设置为系统默认（让 nvim 自行查找）
   -- 这样可以避免在非 Conda 终端中启动 nvim 时出错
