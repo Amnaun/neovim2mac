@@ -1,6 +1,8 @@
 return {
   "3rd/image.nvim",
-  cond = not vim.g.neovide,
+  cond = function()
+    return not vim.g.neovide and #vim.api.nvim_list_uis() > 0
+  end,
   opts = {
     backend = "kitty",
     processor = "magick_cli",

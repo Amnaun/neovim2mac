@@ -1,7 +1,71 @@
 return {
   "xeluxee/competitest.nvim",
   dependencies = "MunifTanjim/nui.nvim",
-  config = function()
-    require("competitest").setup()
-  end,
+  cmd = "CompetiTest",
+  opts = {
+    runner_ui = {
+      interface = "split",
+      selector_show_nu = false,
+      selector_show_rnu = false,
+      show_nu = true,
+      show_rnu = false,
+      viewer = {
+        width = 0.55,
+        height = 0.6,
+        show_nu = true,
+        show_rnu = false,
+        open_when_compilation_fails = true,
+      },
+    },
+    split_ui = {
+      position = "right",
+      relative_to_editor = true,
+      total_width = 0.42,
+    },
+    save_current_file = true,
+    save_all_files = false,
+    compile_command = {
+      cpp = {
+        exec = "g++",
+        args = {
+          "-std=gnu++20",
+          "-O2",
+          "-Wall",
+          "-Wextra",
+          "-Wshadow",
+          "-DLOCAL",
+          "$(FNAME)",
+          "-o",
+          "$(FNOEXT)",
+        },
+      },
+      c = {
+        exec = "gcc",
+        args = { "-std=c17", "-O2", "-Wall", "-Wextra", "$(FNAME)", "-o", "$(FNOEXT)" },
+      },
+      java = {
+        exec = "javac",
+        args = { "$(FNAME)" },
+      },
+    },
+    run_command = {
+      cpp = { exec = "./$(FNOEXT)" },
+      c = { exec = "./$(FNOEXT)" },
+      python = { exec = "python3", args = { "$(FNAME)" } },
+      java = { exec = "java", args = { "$(FNOEXT)" } },
+    },
+    multiple_testing = -1,
+    maximum_time = 5000,
+    output_compare_method = "squish",
+    view_output_diff = true,
+    testcases_auto_detect_storage = true,
+    companion_port = 27121,
+    received_files_extension = "cpp",
+    received_problems_path = "$(CWD)/$(PROBLEM).$(FEXT)",
+    received_contests_directory = "$(CWD)",
+    received_contests_problems_path = "$(PROBLEM).$(FEXT)",
+    open_received_problems = true,
+    open_received_contests = true,
+    replace_received_testcases = true,
+  },
 }

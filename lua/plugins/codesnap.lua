@@ -1,20 +1,39 @@
 return {
   "mistricky/codesnap.nvim",
-  build = "make build_generator",
-  requires = { "nvim-treesitter/nvim-treesitter" },
-  config = function()
-    require("codesnap").setup({
-      has_line_number = true,
-      bg_theme = "dusk",
-      has_breadcrumbs = true,
-      show_workspace = true,
-      breadcrumbs_separator = "🌟",
-      watermark = "Amnaun",
-    })
-  end,
-  opts = {
-    save_path = "~/Pictures",
-    has_breadcrumbs = true,
-    bg_theme = "bamboo",
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
+  cmd = {
+    "CodeSnap",
+    "CodeSnapSave",
+    "CodeSnapASCII",
+    "CodeSnapHighlight",
+    "CodeSnapSaveHighlight",
   },
+  opts = {
+    show_line_number = true,
+    show_workspace = true,
+    snapshot_config = {
+      theme = "candy",
+      code_config = {
+        breadcrumbs = {
+          enable = true,
+          separator = "🌟",
+        },
+      },
+      watermark = {
+        content = "Amnaun",
+      },
+    },
+  },
+  config = function(_, opts)
+    require("codesnap").setup(opts)
+
+    local cpath = vim.split(package.cpath, ";", { plain = true, trimempty = true })
+    package.cpath = table.concat(
+      vim.tbl_filter(function(path)
+        return not path:find("codesnap.nvim/lua/libs", 1, true)
+          and not path:find("codesnap.nvim/lua/mac-aarch64_generator.so", 1, true)
+      end, cpath),
+      ";"
+    )
+  end,
 }

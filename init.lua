@@ -29,5 +29,4 @@ if conda_path then
 else
   -- 否则，让它保持未设置或设置为系统默认（让 nvim 自行查找）
   -- 这样可以避免在非 Conda 终端中启动 nvim 时出错
-  print("未检测到 Conda 环境，使用默认 Python Provider 查找。")
 end
